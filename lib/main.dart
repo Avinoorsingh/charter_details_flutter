@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:task/theme/theme_constants.dart';
 import 'package:task/theme/theme_manager.dart';
 import 'package:task/utils/helper_widgets.dart';
-
 import 'Widgets/AddCharterScreen.dart';
 
 void main() {
@@ -62,8 +61,6 @@ class MyHomeScreen extends StatefulWidget {
 class _MyHomeScreenState extends State<MyHomeScreen> {
   @override
   Widget build(BuildContext context) {
-    TextTheme _textTheme = Theme.of(context).textTheme;
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Task1"),
