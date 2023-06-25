@@ -16,7 +16,7 @@ class AddCharterScreen extends StatefulWidget {
 class _AddCharterScreenState extends State<AddCharterScreen> {
 
   getUserInfo() async {
-String email="xihoh55496@dineroa.com";
+  String email="xihoh55496@dineroa.com";
   String password="Marlo@123";
   final response = await http.get(
     Uri.parse('https://asia-southeast1-marlo-bank-dev.cloudfunctions.net/api_dev/contracts/charterers/search?charterer_name=C'),
@@ -25,8 +25,6 @@ String email="xihoh55496@dineroa.com";
       'authtoken':'eyJhbGciOiJSUzI1NiIsImtpZCI6ImE5NmFkY2U5OTk5YmJmNWNkMzBmMjlmNDljZDM3ZjRjNWU2NDI3NDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbWFybG8tYmFuay1kZXYiLCJhdWQiOiJtYXJsby1iYW5rLWRldiIsImF1dGhfdGltZSI6MTY2OTg4MDg4MiwidXNlcl9pZCI6IlJoSGdiY1U0cHZNMGR3RE90d1piTlhPOTlRMjMiLCJzdWIiOiJSaEhnYmNVNHB2TTBkd0RPdHdaYk5YTzk5UTIzIiwiaWF0IjoxNjY5ODgwODgyLCJleHAiOjE2Njk4ODQ0ODIsImVtYWlsIjoieGlob2g1NTQ5NkBkaW5lcm9hLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ4aWhvaDU1NDk2QGRpbmVyb2EuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.tcnVAKHuPZhDvBwd-SLUyhmZRMZeeGDCYQC5iT6p9zZTy3D_iUbmmdYNJDBgcrs_HFbudIOzyAor_zOMcxWYTNCwcSBYKAFYkAhhpyGD7iv2zYEwCN7nl22V0IQFHP5GZJ_DLgU3cp9GCaEC7qwY06hF8_wd6754Kn_qQL_E2o3vIKwjEbUAYFLPozaTA3GCLf5pfsoQPxfZ0WFwTCKVH7KriLgP1Wk0XHyIiEYuBZtzTtW2sliaPpSKRLy2UGergXih6Dr3kayXTvd1Yjmu_HogSl3jCannNu6JhkyWXxjefPsKrPCSgzf6hVjp7eJs_8ZHTz_6Bhp7kfh3tu3S7A', // HttpHeaders.authorizationHeader: base64Encode(utf8.encode('${email}:${password}')),
     },
   );
-  final responseJson = jsonDecode(response.body);
-  print(responseJson);
     }
     
     @override
@@ -40,7 +38,6 @@ void _runFilter(String enteredKeyword)async {
     if (enteredKeyword.isEmpty) {
       // if the search field is empty or only contains white-space, we'll display all users
       // results = _allUsers;
-      print("String is empty");
     } else {
        final response = await http.get(
     Uri.parse('https://asia-southeast1-marlo-bank-dev.cloudfunctions.net/api_dev/contracts/charterers/search?charterer_name=${enteredKeyword}'),
